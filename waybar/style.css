@@ -1,123 +1,92 @@
 * {
-    /*
-    #  Colors used in this Light Waybar Theme. This is just for reference.
-        --foreground : #242639;
-        --background : #AECCE6;
-        --blue	     : #464CE1;
-        --red	     : #DF373A;
-        --violet	 : #7F00FF;
-        --slate-grey : #708090;
-    */
-        
-        border: none;
-        border-radius: 0px;
-        font-weight: bold;
-        font-size: 14px;
-        min-height: 22px;
-        margin-left: 2px;
-        margin-right: 2px;
+    border: none;
+    border-radius: 0;
+    font-family: "0xProto Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "0xProto";
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #c9545d;
+    border-top: 2px solid #c9545d;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+    padding: 0 3px;
+    margin: 0 2px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
     }
-    
-    window#waybar {
-        background: #AECCE6;
-        /*Uncomment the below item to add a border.*/
-        /*border: 1px solid #9DCBD7;*/
-        border-radius: 5px;
-    }
-    
-    #workspaces button {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        padding-right: 10px;
-        padding-left: 10px;
-        color: #242639;
-    }
-    
-    #workspaces button.active {
-        background: #AECCE6;
-        color: #242639;
-        margin-right: 0px;
-        margin-left: 0px;
-        padding-right: 4px;
-        padding-left: 4px;
-    }
-    
-    #workspaces button:hover {
-        background: transparent;
-        color: #242639;
-    }
-    
-    #taskbar button {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        padding-right: 4px;
-        padding-left: 4px;
-        color: #242639;
-    }
-    
-    #taskbar button.active {
-        background: transparent;
-        color: #242639;
-        margin-right: 0px;
-        margin-left: 0px;
-        padding-right: 4px;
-        padding-left: 4px;
-    }
-    
-    #taskbar button:hover {
-        /*Colors are reverted. Although the BG may not work everywhere*/
-        background: #242639;
-        color: #AECCE6;
-    }
-    
-    #clock {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        border-radius: 5px;
-        margin-top: 3px;
-        margin-right: 6px;
-        margin-left: 6px;
-        padding-right: 3px;
-        padding-left: 3px;
-        color: #242639;
-    }
-    
-    #cpu {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        border-radius: 5px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        padding-right: 4px;
-        padding-left: 4px;
-        color: #242639;
-    }
-    
-    #network {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        border-radius: 5px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        padding-right: 4px;
-        padding-left: 4px;
-        color: #242639;
-    }
-    
-    #taskbar {
-        padding: 0px;
-    }
-    
-    #custom-appmenu {
+}
+
+#battery.warning:not(.charging) {
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+    color: white;
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#tray {
+}
+
+#custom-appmenu {
         /*
         This is for the module app menu.
         */
@@ -131,70 +100,10 @@
         margin-left: 1px;
         padding-right: 4px;
         padding-left: 4px;
-        color: #242639;
-    }
-    
-    #pulseaudio {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        border-radius: 5px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        padding-right: 12px;
-        padding-left: 4px;
-        color: #242639;
-    }
-    
-    #memory {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        border-radius: 5px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        padding-right: 4px;
-        padding-left: 4px;
-        color: #242639;
-    }
-    
-    #disk {
-        box-shadow: none;
-             text-shadow: none;
-         padding: 0px;
-         border-radius: 5px;
-         margin-top: 3px;
-         margin-bottom: 3px;
-         padding-right: 4px;
-         padding-left: 4px;
-         color: #242639;
-    }
-    
-    #tray {
-        box-shadow: none;
-            text-shadow: none;
-        padding: 0px;
-        border-radius: 5px;
-        margin-top: 3px;
-        margin-bottom: 3px;
-        padding-right: 4px;
-        padding-left: 4px;
-        color: #242639;
-    }
-    
-    #user {
-        box-shadow: none;
-             text-shadow: none;
-         padding: 0px;
-         border-radius: 5px;
-         margin-top: 3px;
-         margin-bottom: 3px;
-         padding-right: 4px;
-         padding-left: 4px;
-         color: #242639;
-    }
-    
-    #custom-quit {
+        color: white;
+}
+
+#custom-quit {
         box-shadow: none;
             text-shadow: none;
         padding: 0px;
@@ -205,7 +114,7 @@
         margin-left: 2px;
         padding-right: 10px;
         padding-left: 10px;
-        color: #242639;
+        color: white;
     }
     
     #custom-lock {
@@ -219,7 +128,7 @@
         margin-left: 2px;
         padding-right: 10px;
         padding-left: 10px;
-        color: #242639;
+        color: white;
     }
     
     #custom-reboot{
@@ -233,7 +142,7 @@
         margin-left: 2px;
         padding-right: 10px;
         padding-left: 10px;
-        color: #242639;
+        color: white;
     }
     
     #custom-shutdown {
@@ -247,6 +156,5 @@
         margin-left: 2px;
         padding-right: 10px;
         padding-left: 10px;
-        color: #242639;
+        color: white;
     }
-    
