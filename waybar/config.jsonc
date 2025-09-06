@@ -5,10 +5,9 @@
     "modules-center": ["hyprland/workspaces"],
     "modules-right": ["cpu","memory","disk", "network", "pulseaudio", "tray","group/group-power"],
     "custom/appmenu": {
-        	"format": "Menu {icon}",
-        	"format-icon": "🔍︎",
+        	"format": " 🔍︎ ",
         	"rotate": 0,
-        	"on-click": "~/.config/waybar/runwofi.sh"
+        	"on-click": "~/.config/waybar/runrofi.sh"
     },
     "wlr/taskbar": {
         	"format": "{icon}",
@@ -29,6 +28,7 @@
             "4": "",
             "5": "",
             "6": "",
+			"7": "󰢹",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -65,7 +65,7 @@
         	"format-linked": "{ifname} (No IP)",
         	"format-disconnected": "",
         	"tooltip-format-disconnected": "Disconnected",
-        	"format-alt": " Up: {bandwidthUpBytes}",
+        	"format-alt": " {bandwidthUpBytes}",
         	"interval": 2
     },
     "tray": {
@@ -86,7 +86,7 @@
         		"phone-muted": "",
         		"portable": "",
         		"car": "",
-        		"default": ["", ""]
+        		"default": ["", "" ]
     		},
     		"scroll-step": 3,
     		"on-click": "pavucontrol",
